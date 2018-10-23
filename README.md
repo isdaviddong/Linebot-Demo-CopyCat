@@ -39,3 +39,8 @@ Linebot-Demo-CopyCat
 畫面
 ===
 ![](https://i.imgur.com/DKvVs4A.png)
+
+線上課程
+===
+LineBotSDK線上教學課程: <br/>
+https://www.udemy.com/line-bot <br/>
