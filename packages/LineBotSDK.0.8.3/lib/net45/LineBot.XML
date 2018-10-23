@@ -1,0 +1,1172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LineBot</name>
+    </assembly>
+    <members>
+        <member name="T:isRock.LIFF.Utility">
+            <summary>
+            LIFF Utility
+            </summary>
+        </member>
+        <member name="M:isRock.LIFF.Utility.AddLiffApp(System.String,System.Uri,isRock.LIFF.ViewType)">
+            <summary>
+            Add a new liff app
+            </summary>
+            <param name="ChannelAccessToken"></param>
+            <param name="LiffAppUrl"></param>
+            <param name="viewType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ButtonsTemplateQuestionAttribute">
+            <summary>
+            描述問題(以Template Message方式呈現)
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.QuestionAttribute">
+            <summary>
+            描述問題
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.OrderAttribute">
+            <summary>
+            描述詢問順序
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.IConversationEntity">
+            <summary>
+            對話實體 介面
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ConversationEntity">
+            <summary>
+            對話實體 抽象類別
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ConversationState`1">
+            <summary>
+            保留每一個用戶對話狀態與資料收集狀態的物件
+            這個物件由 InformationCollector 自動產生，會被序列化與反序列化
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ConversationState`1.GetNextQuestionResult">
+            <summary>
+            GetNextQuestion的Result物件 
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.GetNextQuestionResult.Question">
+            <summary>
+            下一個問題
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.GetNextQuestionResult.PropertyName">
+            <summary>
+            下一個屬性名稱
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.GetNextQuestionResult.Order">
+            <summary>
+            下一個編號
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.LastQuestionOrder">
+            <summary>
+            最近一次的屬性編號
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.ConversationBeginUTC">
+            <summary>
+            此對話最初開始時間
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.ConversationLatestUTC">
+            <summary>
+            此用戶最近一次對話時間
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.ConversationLatestReply">
+            <summary>
+            最後一次回覆的訊息
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.LineUserUid">
+            <summary>
+            用戶LineUserId
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ConversationState`1.ConversationEntity">
+            <summary>
+            要蒐集的物件
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.ConversationState`1.GetNextQuestion">
+            <summary>
+            取得下一個問題
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs">
+            <summary>
+            當檢查對話中用戶傳來的訊息時的觸發的事件，傳入的參數
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.CurrentPropertyName">
+            <summary>
+            當前正在處理的屬性名稱
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.RequiredType">
+            <summary>
+            當前正在處理的屬性預期的應有類型
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.SourceEvent">
+            <summary>
+            用戶傳遞的原始 Line Message Event
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.isMismatch">
+            <summary>
+            如果設為True則表示用戶的回答不正確(此問題會重問一次)
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.ReceievedMessage">
+            <summary>
+            從用戶收到的訊息
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.ResponseMessage">
+            <summary>
+            更新此屬性會蓋過系統預設的ResponseMessageCandidate
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.OnMessageTypeCheckEventArgs.ResponseButtonsTemplateMessage">
+            <summary>
+            更新此屬性會蓋過系統預設的ResponseButtonsTemplateMessageCandidate
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.InformationCollector`1">
+            <summary>
+             資訊蒐集器
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.InformationCollector`1.BreakKeyWords">
+            <summary>
+            預設的用戶中斷關鍵字
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.InformationCollector`1.UserBreakDefaultResponseMessageCandidate">
+            <summary>
+            預設的用戶中斷候選字
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.InformationCollector`1.#ctor(System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="ChannelAccessToken"></param>
+            <param name="EntityType"></param>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.InformationCollector`1.CheckEntityDefinition">
+            <summary>
+            測試Entity的定義是否正確
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.InformationCollector`1.LoadConversationStatus(System.String)">
+            <summary>
+            載入該用戶上次對談資料
+            </summary>
+            <param name="LineUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.InformationCollector`1.SaveConversationStatus(isRock.LineBot.Conversation.ConversationState{`0})">
+            <summary>
+            保留該用戶這次對談資料
+            </summary>
+            <param name="conversationState"></param>
+        </member>
+        <member name="M:isRock.LineBot.Conversation.InformationCollector`1.Process(isRock.LineBot.Event,System.Boolean)">
+            <summary>
+            處理對話
+            </summary>
+            <param name="receievedEvent"></param>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ProcessResultStatus">
+            <summary>
+            CIC Result的ResultStatus(enum)
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.Processed">
+            <summary>
+            做了處理
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.Done">
+            <summary>
+            所有資料蒐集完成
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.Pass">
+            <summary>
+            不做處理
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.Exception">
+            <summary>
+            有錯誤
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.Break">
+            <summary>
+            用戶中斷
+            </summary>
+        </member>
+        <member name="F:isRock.LineBot.Conversation.ProcessResultStatus.InputDataFitError">
+            <summary>
+            預期資料轉型錯誤
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Conversation.ProcessResult`1">
+            <summary>
+            CIC Process的result
+            </summary>
+            <typeparam name="EntityType"></typeparam>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ProcessResult`1.ResponseButtonsTemplateCandidate">
+            <summary>
+            建議的ButtonsTemplate回應訊息
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ProcessResult`1.ResponseMessageCandidate">
+            <summary>
+            建議的回應訊息
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ProcessResult`1.ConversationState">
+            <summary>
+            對談狀態(CIC內部使用)
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ProcessResult`1.ProcessResultStatus">
+            <summary>
+            CIC Process的處理結果
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.Conversation.ProcessResult`1.Exception">
+            <summary>
+            如果CIC Process處理後有exception，可以從這裡取得
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Bot">
+            <summary>
+            操作Line bot的類別實體
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Bot.#ctor(System.String)">
+            <summary>
+            建構函式
+            </summary>
+            <param name="ChannelAccessToken">請填入很長的ChannelAccessToken</param>
+        </member>
+        <member name="M:isRock.LineBot.Bot.#ctor">
+            <summary>
+            建構函式(自動抓取appSetting中的ChannelAccessToken)
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,System.String)">
+            <summary>
+            回覆訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Message">要回覆的訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,System.Int32,System.Int32)">
+            <summary>
+            回覆貼圖訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="packageId">貼圖套件id</param>
+             <param name="stickerId">貼圖id</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,System.Uri)">
+            <summary>
+            回覆圖片訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="ContentUrl">圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,System.Uri,System.Uri)">
+            <summary>
+            回覆圖片訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="originalContentUrl">原始圖片URL(必須是https)</param>
+            <param name="previewImageUrl">預覽圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessageWithJSON(System.String,System.String)">
+            <summary>
+            回覆訊息(以JSON格式描述訊息內容)
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="JSONMessages">以JSON格式描述的訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,isRock.LineBot.ImagemapMessage)">
+            <summary>
+            發送ImagemapMessage訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">Imagemap訊息內容</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,isRock.LineBot.ButtonsTemplate)">
+            <summary>
+            發送ButtonTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[ButtonsTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,isRock.LineBot.ConfirmTemplate)">
+            <summary>
+            發送ConfirmTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[ConfirmTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,isRock.LineBot.CarouselTemplate)">
+            <summary>
+            發送CarouselTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[CarouselTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,isRock.LineBot.ImageCarouselTemplate)">
+            <summary>
+             發送ImageCarouselTemplate訊息 
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[CarouselTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,System.String)">
+            <summary>
+            發送訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="TextMessage">[訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,System.Uri)">
+            <summary>
+            傳送圖片訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="ContentUrl">圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,System.Uri,System.Uri)">
+            <summary>
+            傳送圖片訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="originalContentUrl">原始圖片位置(必須是https)</param>
+            <param name="previewImageUrl">預覽圖片位置(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessage(System.String,System.Int32,System.Int32)">
+            <summary>
+            傳送貼圖訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="packageId">packageId</param>
+            <param name="stickerId">stickerId</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMulticast(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            一次傳遞訊息給多人(最多150人，最多五則訊息)
+            </summary>
+            <param name="ToUsers">User ID list</param>
+            <param name="TextMessages">純文字訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,isRock.LineBot.TextMessage)">
+            <summary>
+            回覆文字訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="TextMessage">文字訊息物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,System.Collections.Generic.List{isRock.LineBot.MessageBase})">
+            <summary>
+            回覆多則訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Messages">不超過五則的訊息集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.ReplyMessage(System.String,isRock.LineBot.MessageBase)">
+            <summary>
+            回覆單則訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Message">繼承自MessageBase的訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.PushMessageWithJSON(System.String,System.String)">
+            <summary>
+            發送訊息(以JSON格式描述訊息內容)
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="JSONMessages">以JSON格式描述的訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.Leave(System.String)">
+            <summary>
+            離開Group或Room
+            </summary>
+            <param name="GroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.GetUserInfo(System.String)">
+            <summary>
+            取得用戶身分
+            </summary>
+            <param name="UserUid">不是Line Id，是很長的一串U00xx00xx00x000x0x0x0x0x0x0x這樣的id</param>
+            <returns>LineUserInfo物件</returns>
+        </member>
+        <member name="M:isRock.LineBot.Bot.GetUserUploadedContent(System.String)">
+            <summary>
+            透過ContentID取得用戶上傳的檔案
+            </summary>
+            <param name="ContentID">Line檔案物件編號</param>
+            <returns>bytes</returns>
+        </member>
+        <member name="T:isRock.LineBot.LineWebHookControllerBase">
+            <summary>
+            提供繼承用的LinewebHook ApiController
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.LineWebHookControllerBase.ChannelAccessToken">
+            <summary>
+            設定或取得當前 Line Messanging API Channel Access Token
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.LineWebHookControllerBase.ReceivedMessage">
+            <summary>
+            Parsing好的接收訊息
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,isRock.LineBot.MessageBase)">
+            <summary>
+            發送基底類別為MessageBase的Message訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">基底類別為MessageBase的Message</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,System.Collections.Generic.List{isRock.LineBot.MessageBase})">
+            <summary>
+            發送多筆基底類別為MessageBase的Message訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Messages">基底類別為MessageBase的Message集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessagesWithJSON(System.String,System.String)">
+            <summary>
+            發送訊息給用戶(以JSON格式描述多筆訊息)
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="JSONMessages">以JSON格式描述的多筆訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,isRock.LineBot.ImagemapMessage)">
+            <summary>
+            發送ImagemapMessage訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">Imagemap訊息內容</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,isRock.LineBot.ButtonsTemplate)">
+            <summary>
+            發送ButtonTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[ButtonsTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,isRock.LineBot.ConfirmTemplate)">
+            <summary>
+            發送ConfirmTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[ConfirmTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,isRock.LineBot.CarouselTemplate)">
+            <summary>
+            發送ConfirmTemplate訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="Message">[CarouselTemplate訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,System.String)">
+            <summary>
+            發送訊息
+            </summary>
+            <param name="ToUserID">發送對象(用戶userId，非line id)</param>
+            <param name="TextMessage">[訊息內容]</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,System.Uri)">
+            <summary>
+            傳送圖片訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="ContentUrl">圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,System.Uri,System.Uri)">
+            <summary>
+            傳送圖片訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="originalContentUrl">原始圖片位置(必須是https)</param>
+            <param name="previewImageUrl">預覽圖片位置(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMessage(System.String,System.Int32,System.Int32)">
+            <summary>
+            傳送貼圖訊息
+            </summary>
+            <param name="ToUserID">用戶userId</param>
+            <param name="packageId">packageId</param>
+            <param name="stickerId">stickerId</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.PushMulticast(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            一次傳遞訊息給多人(最多150人，最多五則訊息)
+            </summary>
+            <param name="ToUsers">User ID list</param>
+            <param name="TextMessages">純文字訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,isRock.LineBot.MessageBase)">
+            <summary>
+            回覆基底類別為MessageBase的訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Message">基底類別為MessageBase的訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,System.Collections.Generic.List{isRock.LineBot.MessageBase})">
+            <summary>
+            回覆多筆訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Messages">基底類別為MessageBase的訊息集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessageWithJSON(System.String,System.String)">
+            <summary>
+            回覆訊息(以JSON格式描述的訊息陣列)
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="JSONMessages">JSON格式的Messages陣列</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,isRock.LineBot.ConfirmTemplate)">
+            <summary>
+            回覆ConfirmTemplate訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="ConfirmTemplate">要回覆的 ConfirmTemplate 訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,isRock.LineBot.CarouselTemplate)">
+            <summary>
+            CarouselTemplate
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="CarouselTemplate">要回覆的 CarouselTemplate 訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,isRock.LineBot.ImageCarouselTemplate)">
+            <summary>
+            回覆ImageCarouselTemplate訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="ImageCarouselTemplate">要回覆的 ImageCarouselTemplate 訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,isRock.LineBot.ButtonsTemplate)">
+            <summary>
+            回覆ButtonsTemplate訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="ButtonsTemplate">要回覆的 ButtonsTemplate 訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,System.String)">
+            <summary>
+            回覆文字訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Message">要回覆的文字訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,System.Int32,System.Int32)">
+            <summary>
+            回覆貼圖訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="packageId">貼圖套件id</param>
+             <param name="stickerId">貼圖id</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,System.Uri)">
+            <summary>
+            回覆圖片訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="ContentUrl">圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.ReplyMessage(System.String,System.Uri,System.Uri)">
+            <summary>
+            回覆圖片訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="originalContentUrl">原始圖片URL(必須是https)</param>
+            <param name="previewImageUrl">預覽圖片URL(必須是https)</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.GetBotInstance">
+            <summary>
+            Get new bot object instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.GetUserUploadedContent(System.String)">
+            <summary>
+            Get Content Body bytes by Content ID
+            </summary>
+            <param name="ContentID">ContentID</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.LineWebHookControllerBase.GetUserInfo(System.String)">
+            <summary>
+            Get User Info By UserId
+            </summary>
+            <param name="UserUid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineBot.Utility">
+            <summary>
+            泛用靜態方法
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.Utility.SignatureValidation(System.Web.Http.ApiController)">
+            <summary>
+            驗證訊息來自Line Server
+            自動抓取AppSettings中的LineChannelSecret
+            </summary>
+            <param name="ApiController">ApiController</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.SignatureValidation(System.Web.Http.ApiController,System.String)">
+            <summary>
+            驗證訊息來自Line Server
+            </summary>
+            <param name="ApiController">ApiController</param>
+            <param name="LineChannelSecret">傳入Line ChannelSecret</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.GetGroupMemberProfile(System.String,System.String,System.String)">
+            <summary>
+            取得Group中特定Member的個人資訊
+            </summary>
+            <param name="groupId"></param>
+            <param name="userId"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.GetRoomMemberProfile(System.String,System.String,System.String)">
+            <summary>
+            取得Room中特定Member的個人資訊
+            </summary>
+            <param name="roomId"></param>
+            <param name="userId"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.LeaveGroup(System.String,System.String)">
+            <summary>
+            主動Leave group
+            </summary>
+            <param name="groupId">groupId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.LeaveRoom(System.String,System.String)">
+            <summary>
+            主動Leave room
+            </summary>
+            <param name="roomId">roomId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.GetUserUploadedContent(System.String,System.String)">
+            <summary>
+            透過ContentID取得用戶上傳的檔案
+            </summary>
+            <param name="ContentID"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.Parsing(System.String)">
+            <summary>
+            傳入RawData，解析出ReceievedMessage物件
+            </summary>
+            <param name="RawData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.GetUserInfo(System.String,System.String)">
+            <summary>
+            傳入用戶UID, 取得用Profile
+            </summary>
+            <param name="uid">用戶UID,</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushMessagesWithJSON(System.String,System.String,System.String)">
+            <summary>
+            主動傳送ButtonsTemplate Message
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="JSONMessages">JSON格式的訊息，參考LINE API Reference</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushMessage(System.String,System.String,System.String)">
+            <summary>
+            主動傳送Push文字訊息
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="Message">要傳送的訊息</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushImageMessage(System.String,System.String,System.String,System.String)">
+            <summary>
+            主動傳送圖片訊息
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="originalContentUrl">要傳送的訊息</param>
+              /// <param name="previewImageUrl">要傳送的訊息</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushStickerMessage(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            主動傳送貼圖訊息
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="packageId">packageId</param>
+              /// <param name="stickerId">stickerId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushTemplateMessage(System.String,isRock.LineBot.ButtonsTemplate,System.String)">
+            <summary>
+            主動傳送ButtonsTemplate Message
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="packageId">packageId</param>
+              /// <param name="stickerId">stickerId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushTemplateMessage(System.String,isRock.LineBot.ConfirmTemplate,System.String)">
+            <summary>
+            主動傳送ConfirmTemplate Message
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="packageId">packageId</param>
+              /// <param name="stickerId">stickerId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushTemplateMessage(System.String,isRock.LineBot.CarouselTemplate,System.String)">
+            <summary>
+            主動傳送CarouselTemplate Message
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="TemplateMessage">TemplateMessage</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.PushTemplateMessage(System.String,isRock.LineBot.ImageCarouselTemplate,System.String)">
+            <summary>
+            主動傳送CarouselTemplate Message
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="packageId">packageId</param>
+              /// <param name="stickerId">stickerId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyMessageWithJSON(System.String,System.String,System.String)">
+            <summary>
+            回覆訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="JSONMessages">JSON格式的訊息，參考LINE API Reference</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyMessage(System.String,System.String,System.String)">
+            <summary>
+            回覆訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="Message">訊息</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyStickerMessage(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            回覆貼圖訊息
+            </summary>
+            <param name="ReplyToken">ReplyToken</param>
+            <param name="packageId">packageId</param>
+              /// <param name="stickerId">stickerId</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyImageMessage(System.String,System.String,System.String,System.String)">
+            <summary>
+             回覆圖片訊息
+            </summary>
+            <param name="ToUserID">用戶UID(注意並非Line用戶id)</param>
+            <param name="originalContentUrl">要傳送的訊息</param>
+              /// <param name="previewImageUrl">要傳送的訊息</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyTemplateMessage(System.String,isRock.LineBot.ConfirmTemplate,System.String)">
+            <summary>
+            Reply ConfirmTemplate Message
+            </summary>
+            <param name="ReplyToken"></param>
+            <param name="TemplateMessage"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyTemplateMessage(System.String,isRock.LineBot.ButtonsTemplate,System.String)">
+            <summary>
+            Reply ButtonsTemplate Message
+            </summary>
+            <param name="ReplyToken"></param>
+            <param name="TemplateMessage"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyTemplateMessage(System.String,isRock.LineBot.ImageCarouselTemplate,System.String)">
+            <summary>
+            Reply ImageCarouselTemplate Message
+            </summary>
+            <param name="ReplyToken"></param>
+            <param name="TemplateMessage"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.ReplyTemplateMessage(System.String,isRock.LineBot.CarouselTemplate,System.String)">
+            <summary>
+            Reply ImageCarouselTemplate Message
+            </summary>
+            <param name="ReplyToken"></param>
+            <param name="TemplateMessage"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.IssueChannelAccessToken(System.String,System.String)">
+            <summary>
+            re-issue short-live Channel Access Token
+            </summary>
+            <param name="client_id"></param>
+            <param name="client_secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineBot.Utility.RevokeChannelAccessToken(System.String)">
+            <summary>
+             Revoke  short-live Channel Access Token
+            </summary>
+            <param name="access_token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineBot.ShortLivedToken">
+            <summary>
+            定義Issue Short Lived Token回傳直
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.MessageBase">
+            <summary>
+            新版Message的基底抽象類別
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.TextMessage">
+            <summary>
+            純文字訊息
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.StickerMessage">
+            <summary>
+            貼圖訊息
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.ImageMessage">
+            <summary>
+            圖片訊息
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.ImageMessage.#ctor(System.Uri,System.Uri)">
+            <summary>
+            Image Message
+            </summary>
+            <param name="originalContentUrl"> 	Image URL (Max: 1000 characters)</param>
+            <param name="previewImageUrl">Preview image URL (Max: 1000 characters)</param>
+        </member>
+        <member name="M:isRock.LineBot.VideoMessage.#ctor(System.Uri,System.Uri)">
+            <summary>
+            Video message
+            </summary>
+            <param name="originalContentUrl">URL of video file (Max: 1000 characters)</param>
+            <param name="previewImageUrl">URL of preview image (Max: 1000 characters)</param>
+        </member>
+        <member name="P:isRock.LineBot.AudioMessage.duration">
+            <summary>
+            Length of audio file (milliseconds)
+            </summary>
+        </member>
+        <member name="M:isRock.LineBot.AudioMessage.#ctor(System.Uri,System.Int32)">
+            <summary>
+            Audio Message
+            </summary>
+            <param name="originalContentUrl">URL of audio file (Max: 1000 characters)</param>
+            <param name="duration">Length of audio file (milliseconds)</param>
+        </member>
+        <member name="T:isRock.LineBot.message">
+            <summary>
+            multicast 使用的Message物件
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.message.type">
+            <summary>
+            類型(text)
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.message.text">
+            <summary>
+            文字
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.MulticastMessage">
+            <summary>
+            multicast 使用的Message物件
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.MulticastMessage.type">
+            <summary>
+            類型(text)
+            </summary>
+        </member>
+        <member name="P:isRock.LineBot.MulticastMessage.text">
+            <summary>
+            文字
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Column">
+            <summary>
+            CarouselTemplate中的一組，稱為Column
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.ImageCarouselColumn">
+             <summary>
+            ImageCarouselTemplate中的一組，稱為Column
+             </summary>
+        </member>
+        <member name="T:isRock.LineBot.PostbackAction">
+            <summary>
+            PostbackAction
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.MessageAction">
+            <summary>
+            MessageAction
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.UriAction">
+            <summary>
+            UriAction
+            </summary>
+        </member>
+        <member name="T:isRock.LineBot.Message">
+            <summary>
+            定義接收來的訊息(JSON反序列化用)
+            </summary>
+        </member>
+        <member name="T:isRock.LineLoginV21.GetTokenFromCodeResult">
+            <summary>
+            呼叫GetTokenFromCode後的回傳結果
+            </summary>
+        </member>
+        <member name="T:isRock.LineLoginV21.Profile">
+            <summary>
+            呼叫GetUserProfile後的回傳結果
+            </summary>
+        </member>
+        <member name="T:isRock.LineLoginV21.Utility">
+            <summary>
+            靜態方法工具
+            </summary>
+        </member>
+        <member name="M:isRock.LineLoginV21.Utility.GetTokenFromCode(System.String,System.String,System.String,System.String)">
+            <summary>
+            從code取得Notify Token
+            </summary>
+            <param name="code"></param>
+            <param name="ClientId"></param>
+            <param name="ClientSecret"></param>
+            <param name="redirect_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineLoginV21.Utility.GetUserProfile(System.String)">
+            <summary>
+            傳入access_token, 取得用Profile
+            </summary>
+            <param name="access_token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineLoginV1.Utility.GetToeknFromCode(System.String,System.String,System.String,System.String)">
+            <summary>
+            從code取得Notify Token
+            </summary>
+            <param name="code"></param>
+            <param name="ClientId"></param>
+            <param name="ClientSecret"></param>
+            <param name="redirect_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineLoginV1.Utility.GetUserProfile(System.String)">
+            <summary>
+            傳入用戶UID, 取得用Profile
+            </summary>
+            <param name="uid">用戶UID,</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="T:isRock.LineNotify.Utility">
+            <summary>
+            LineNotify相關的Urility
+            </summary>
+        </member>
+        <member name="M:isRock.LineNotify.Utility.GetStatus(System.String)">
+            <summary>
+            取得token狀態
+            </summary>
+            <param name="access_token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineNotify.Utility.GetTokenFromCode(System.String,System.String,System.String,System.String)">
+            <summary>
+            從code取得Notify Token
+            </summary>
+            <param name="code"></param>
+            <param name="ClientId"></param>
+            <param name="ClientSecret"></param>
+            <param name="redirect_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LineNotify.Utility.SendNotify(System.String,System.String)">
+            <summary>
+            以LineNotify Token發送訊息給特定User
+            </summary>
+            <param name="NotifyToken"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LINE.Utility.LineHttpPost(System.String,System.Uri,System.String)">
+            <summary>
+             Line使用的標準 http post action ，回傳 JSON string
+            </summary>
+            <param name="JSON">傳入參數</param>
+            <param name="Endpoint">Endpoint</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LINE.Utility.LineHttpPost``1(System.String,System.Uri,System.String)">
+            <summary>
+            Line使用的標準 http post action ，回傳 Deserialize 後的 Object
+            </summary>
+            <typeparam name="T">預期回傳型別</typeparam>
+            <param name="JSON">傳入參數</param>
+            <param name="Endpoint">Endpoint</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LINE.Utility.LineHttpGet(System.Uri,System.String)">
+            <summary>
+            Line使用的標準 http get action ，回傳 JSON string
+            </summary>
+            <param name="endpoint">endpoint</param>
+            <param name="ChannelAccessToken">ChannelAccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.LINE.Utility.LineHttpGet``1(System.Uri,System.String)">
+            <summary>
+            Line使用的標準 http get action ，回傳 Deserialize 後的 Object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="endpoint"></param>
+            <param name="ChannelAccessToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:isRock.MsQnAMaker.Client.#ctor(System.String,System.String,System.String)">
+            <summary>
+            beta Version API
+            </summary>
+            <param name="domain"></param>
+            <param name="KnowledgeBaseID"></param>
+            <param name="SubscriptionKey"></param>
+        </member>
+        <member name="M:isRock.MsQnAMaker.Client.#ctor(System.Uri,System.String)">
+            <summary>
+            GA Version API
+            </summary>
+            <param name="Endpoint">ex. https://{yourapp}.azurewebsites.net/qnamaker/knowledgebases/{guid}/generateAnswer </param>
+            <param name="EndpointKey">Endpoint Key {guid}</param>
+        </member>
+        <member name="M:isRock.MsQnAMaker.Client.GetResponse(System.String)">
+            <summary>
+            取得QnA Services best response
+            </summary>
+            <param name="query">User Question</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:LineBot.LineBotHelper" -->
+    </members>
+</doc>

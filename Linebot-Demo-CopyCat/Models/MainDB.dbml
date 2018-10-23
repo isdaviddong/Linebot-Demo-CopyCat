@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="MainDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="Linebot_Demo_CopyCat.Properties.Settings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.blah" Member="blah">
+    <Type Name="blah">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LineUserId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserSay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ResponseMsg" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
