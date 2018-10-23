@@ -25,16 +25,16 @@ Linebot-Demo-CopyCat
                 return Ok();
             }
 ```
+* 建議使用Ngrok進行測試 <br/>
+(可參考 https://youtu.be/kCga1_E-ijs ) 
+* LINE Bot後台的WebHook設定，其位置為 Http://你的domain/api/CopyCat
 
 資料庫
 ===
 * 為了符合最低開發需求，此範例資料庫採用 SQL Express (已commit進去專案中) 以及 LinqToSql
 * 開發環境需要安裝 SQL Express, 若要佈署至 Azure Web Site，需要自行改為使用Azure SQL DB
 
-測試
-===
-* 建議使用Ngrok進行測試 <br/>
-(可參考 https://youtu.be/kCga1_E-ijs ) 
+ 
 
 畫面
 ===
