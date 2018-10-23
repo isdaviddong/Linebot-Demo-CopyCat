@@ -4,7 +4,7 @@ Linebot-Demo-CopyCat
 此Line bot範例為使用 LineBotSDK 建立 <br>
 仿造 卡米狗 的行為 <br>
 當你跟 Line bot 說 <br>
-看到 OO 回復 XX <br>
+<B>看到 OO 回復 XX </B><br>
 未來你對該Line bot說 OO 它就回復 XX <br>
 
 如何使用
