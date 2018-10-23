@@ -7,10 +7,6 @@ Linebot-Demo-CopyCat
 看到 OO 回復 XX <br>
 未來你對該Line bot說 OO 它就回復 XX <br>
 
-畫面
-===
-![](https://i.imgur.com/DKvVs4A.png)
-
 如何使用
 ===
 * 請 clone 之後，修改 web.config 中的 ChannelAccessToken
@@ -29,3 +25,7 @@ Linebot-Demo-CopyCat
                 return Ok();
             }
 ```
+
+畫面
+===
+![](https://i.imgur.com/DKvVs4A.png)
