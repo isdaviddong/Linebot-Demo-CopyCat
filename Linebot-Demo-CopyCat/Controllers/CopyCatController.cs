@@ -116,6 +116,8 @@ namespace Linebot_Demo_CopyCat.Controllers
             respMsg += "這樣以後當我看到  OO 就會回覆 XX 囉...";
             respMsg += "(別忘了OO和XX的前後要有空白唷!)";
 
+            //全形空白轉半形
+            userSay = userSay.Replace("　", " ");
             //拆解教學語句
             var words = userSay.Split(' ');
             //去除空元素(可能是兩個空白造成的)
@@ -123,8 +125,6 @@ namespace Linebot_Demo_CopyCat.Controllers
             //去除空白
             for (int i = 0; i < words.Length; i++)
             {
-                //全形空白轉半形
-                words[i].Replace("　", "");
                 //去除空白
                 words[i] = words[i].Trim();
             }
