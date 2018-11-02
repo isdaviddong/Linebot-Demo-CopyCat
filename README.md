@@ -33,7 +33,8 @@ Linebot-Demo-CopyCat
 ===
 * 為了符合最低開發需求，此範例資料庫採用 SQL Express (已commit進去專案中) 以及 LinqToSql
 * 開發環境需要安裝 SQL Express, 若要佈署至 Azure Web Site，需要自行改為使用Azure SQL DB
-
+* 如果你的Visual Studio沒有安裝LinqToSQL，可以參考底下的畫面進行調整:
+![](http://arock.blob.core.windows.net/blogdata201811/02-151006-c3c28ffd-4575-42f3-9924-0e0a8f6fa72c.png)
  
 
 畫面
